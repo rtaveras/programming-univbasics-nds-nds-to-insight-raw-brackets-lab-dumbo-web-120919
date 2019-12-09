@@ -9,12 +9,12 @@ def directors_totals(nds)
   x = 0
   director_name = nds[i][:name]  
   new_hash[director_name] = 0
-  while x < nds.length
-    new_hash << nds[i][:movies][x][worldwide_gross]
+  while x < nds[i][:movies].length
+    new_hash[director_name] += nds[i][:movies][x][:worldwide_gross]
     x += 1
   end
   i += 1
 end
 
-puts new_hash
+return new_hash
 end
